@@ -1,0 +1,12 @@
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.App {
+    background: #ebe8e3;
+    min-height: 900px;
+}
+
+

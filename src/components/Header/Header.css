@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 0 30px;
+}
+
+.title {
+    color: #2eadef;
+}
+
+.header-nav li {
+    display: inline-block;
+    padding-right: 40px;
+}
+
+.header-nav ul {
+    list-style: none;
+    margin: 0 40px 0;
+}
+
+.header-nav .headerLink {
+    color: #868686;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
