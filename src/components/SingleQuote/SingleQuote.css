@@ -1,7 +1,8 @@
 .singleQuote {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     background: #ffffff;
     width: 29%;
+    box-shadow: 13px 13px 17px 0 rgba(50, 50, 50, 0.75);
 }
 
 .quoteText {
