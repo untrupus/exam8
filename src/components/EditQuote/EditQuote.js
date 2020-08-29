@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axiosOrders from "../../axiosOrders";
+import Categories from "../../Categories";
 
 const EditQuote = props => {
     const [editQuote, setEditedQuote] = useState({
@@ -53,6 +54,10 @@ const EditQuote = props => {
         }
     };
 
+    const options = Categories.map(category => (
+        <option key={category.id} value={category.id}>{category.title}</option>
+    ));
+
     return (
         <div>
             <div className="addQuote">
@@ -64,11 +69,7 @@ const EditQuote = props => {
                     onChange={quoteChanged}
                 >
                     <option defaultChecked={true}>Choose category</option>
-                    <option>Star-Wars</option>
-                    <option>Famous-People</option>
-                    <option>Saying</option>
-                    <option>Humour</option>
-                    <option>Motivation</option>
+                    {options}
                 </select>
                 <p>Author:</p>
                 <input

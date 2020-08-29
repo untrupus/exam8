@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './AddQuote.css';
 import axiosOrders from "../../axiosOrders";
+import Categories from "../../Categories";
 
 const AddQuote = props => {
     const [quote, setQuote] = useState({
@@ -8,14 +9,6 @@ const AddQuote = props => {
         category: '',
         text: '',
     });
-
-    const categories = [
-        {title: 'Star Wars', id: 'star-wars'},
-        {title: 'Famous People', id: 'famous-people'},
-        {title: 'Saying', id: 'saying'},
-        {title: 'Humour', id: 'humour'},
-        {title: 'Motivation', id: 'motivation'},
-    ];
 
     const newQuote = event => {
         const name = event.target.name;
@@ -30,8 +23,8 @@ const AddQuote = props => {
         const quoteCopy = {...quote};
         if (quote.author !== ''
             && quote.text !== ''
-            && (quote.category !== ''
-            || quote.category !== 'Choose category')) {
+            && quote.category !== ''
+            && quote.category !== 'Choose category') {
             await axiosOrders.post('/quotes.json', quoteCopy);
             props.history.push({
                 pathname: '/'
@@ -40,7 +33,9 @@ const AddQuote = props => {
             alert('Fill in all fields');
         }
     };
-
+    const options = Categories.map(category => (
+        <option key={category.id} value={category.id}>{category.title}</option>
+    ));
 
     return (
         <div className="addQuote">
@@ -48,11 +43,7 @@ const AddQuote = props => {
             <p>Category:</p>
             <select name="category" onChange={newQuote}>
                 <option defaultChecked={true}>Choose category</option>
-                <option>Star Wars</option>
-                <option>Famous People</option>
-                <option>Saying</option>
-                <option>humour</option>
-                <option>Motivation</option>
+                {options}
             </select>
             <p>Author:</p>
             <input type="text" name="author" onChange={newQuote}/>
