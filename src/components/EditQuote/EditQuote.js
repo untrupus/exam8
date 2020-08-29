@@ -67,6 +67,7 @@ const EditQuote = props => {
                     name="category"
                     value={editQuote.category}
                     onChange={quoteChanged}
+                    className="selectField"
                 >
                     <option defaultChecked={true}>Choose category</option>
                     {options}
@@ -77,12 +78,16 @@ const EditQuote = props => {
                     name="author"
                     value={editQuote.author}
                     onChange={quoteChanged}
+                    className="field"
                 />
                 <p>Quote</p>
-                <textarea name="text" value={editQuote.text} onChange={quoteChanged}/>
+                <textarea name="text"
+                          value={editQuote.text}
+                          onChange={quoteChanged}
+                          className="textarea"/>
                 <br/>
-                <button type="button" onClick={saveChanges}>Save</button>
-                <button type="button" onClick={removeQuote}>Remove</button>
+                <button type="button" onClick={saveChanges} className="btn">Save</button>
+                <button type="button" onClick={removeQuote} className="btn">Remove</button>
             </div>
         </div>
     );

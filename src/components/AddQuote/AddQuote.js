@@ -41,16 +41,16 @@ const AddQuote = props => {
         <div className="addQuote">
             <h2>Submit new quote</h2>
             <p>Category:</p>
-            <select name="category" onChange={newQuote}>
+            <select name="category" onChange={newQuote} className="selectField">
                 <option defaultChecked={true}>Choose category</option>
                 {options}
             </select>
             <p>Author:</p>
-            <input type="text" name="author" onChange={newQuote}/>
+            <input type="text" name="author" onChange={newQuote} className="field"/>
             <p>Quote</p>
-            <textarea name="text" onChange={newQuote}/>
+            <textarea name="text" onChange={newQuote} className="textarea"/>
             <br/>
-            <button type="button" onClick={addQuote}>Save</button>
+            <button type="button" onClick={addQuote} className="btn">Save</button>
         </div>
     );
 };

@@ -1,0 +1,32 @@
+.selectField {
+    padding: 10px 20px 10px 10px;
+    border-radius: 4px;
+}
+
+.field {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.textarea {
+    resize: none;
+    width: 500px;
+    height: 150px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 25px;
+    background: #000;
+    color: #e7bc07;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: none;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.btn:hover {
+    color: white;
+}
