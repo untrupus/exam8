@@ -25,7 +25,11 @@ const QuotesList = () => {
         );
     } else {
         const responseData = Object.entries(quotes);
-        quoteFeed = responseData.map(quote => (
+        const responseShuffle = responseData.sort(() => {
+            return Math.random() - 0.5;
+        });
+
+        quoteFeed = responseShuffle.map(quote => (
                 <SingleQuote
                     key={quote[0]}
                     author={quote[1].author}
